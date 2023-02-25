@@ -18,14 +18,49 @@
   <h1 class = "pizzapocalypse">PIZZAPOCALYPSE</h1>
   <h2 class = "menu">menu options</h2>
   <br/>
-  <h2 class = "subMenu">size</h2>
-  <form class="sizeForm">
-    <select id="size">
-      <option value="1">solo 8"</option>
-      <option value="2">duo 12"</option>
-      <option value="3">raiding party 24"</option>
-    </select>
-    <button type="submit">size</button>
+  <fieldset class = "toppins">
+    <legend class = "subMenu">size</legend>
+    <form>
+      <select id="size" class = "clear">
+        <option value="1">solo 8" -- $10</option>
+        <option value="2">duo 12" -- $15</option>
+        <option value="3">raiding party 24" -- $30</option>
+      </select>
   </form>
+  </fieldset>
+  <fieldset class = "toppins">
+    <legend class = "subMenu">toppings<br/>$2 ea.</legend>
+    <div>
+      <input type="checkbox" id="mushrooms" name="mushrooms">
+        <label for ="mushrooms">mushrooms</label>
+        <br/>
+      <input type="checkbox" id="wild onions" name="wild onions">
+        <label for ="wild onions">wild onions</label>
+        <br/>
+      <input type="checkbox" id="fern tips" name="fern tips">
+        <label for ="fern tips">fern tips</label>
+        <br/>
+      <input type="checkbox" id="other mushrooms" name="other mushrooms">
+        <label for ="other mushrooms">other mushrooms</label>
+        <br/>
+      <input type="checkbox" id="egg-like formations" name="egg-like formations">
+        <label for ="egg-like formations">egg-like formations</label>
+        <br/>
+      <input type="checkbox" id="pineapple" name="pineapple">
+        <label for ="pineapple">pineapple</label>
+        <br/>
+      <input type="checkbox" id="dandelion greens" name="dandelion greens">
+        <label for ="dandelion greens">dandelion greens</label>
+        <br/>
+      <input type="checkbox" id="rhubarb" name="rhubarb">
+        <label for ="rhubarb">rhubarb</label>
+        <br/>
+      <input type="checkbox" id="poached leather" name="poached leather">
+        <label for ="poached leather">poached leather</label>
+        <br/>
+      <input type="checkbox" id="a piece of brandon" name="a piece of brandon">
+        <label for ="a piece of brandon">a piece of brandon</label>
+    </div>
+  </fieldset>
 </body>
 </html>
