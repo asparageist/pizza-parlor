@@ -36,5 +36,9 @@ Copyright (c) 2/11/2023 Joseph Murray
 Describe: pizzaparlor()
 
 Test: "it should construct a pizza object with a constructor"
-Code: class pizza {constructor(pie)}
-Expected Output: 
+Code: pizza = {size, toppings}
+Expected Output: newPizza
+
+Test: "it should assign parameters to the parameters"
+Code: size = "small", toppings = [mushrooms]
+Expected Output: newPizza {size: 'small', toppings: Array(1)}
