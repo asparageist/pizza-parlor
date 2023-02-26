@@ -39,6 +39,6 @@ Test: "it should construct a pizza object with a constructor"
 Code: pizza = {size, toppings}
 Expected Output: newPizza
 
-Test: "it should assign parameters to the parameters"
+Test: "it should assign values to the parameters"
 Code: size = "small", toppings = [mushrooms]
 Expected Output: newPizza {size: 'small', toppings: Array(1)}
