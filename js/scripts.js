@@ -1,4 +1,4 @@
-let size = "";
+let size = [];
 let toppings = [];
 
 window.onload = function() {
@@ -12,22 +12,28 @@ function hideOrder() {
   document.getElementById("pieList").setAttribute("class", "hidden");
 }
 
+function getPie() {
+  getSize();
+  getTops();
+  console.log(newPie);
+}
+
 function getSize() {
   size = document.getElementById("size").value;
-  console.log(size);
+  newPie.pieSize.push(size);
 }
 
 function getTops() {
   toppings = [];
   let checkboxes = document.querySelectorAll("input[type='checkbox']:checked");
-  console.log(checkboxes.length);
+  let topsPrice = 2 * (checkboxes.length);
   for (let i = 0; i < checkboxes.length; i++) {
-    toppings.push(checkboxes[i].value)
+    toppings.push(checkboxes[i].name)
   }
-  console.log(toppings);
+  newPie.pieToppings.push(toppings);
 }
 
-function newPie(pieSize, pieTops) {
-  this.size = pieSize;
-  this.tops = pieTops;
-}
+var newPie = {
+  pieToppings: [],
+  pieSize: []
+};
