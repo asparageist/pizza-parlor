@@ -19,9 +19,9 @@
   <h1 class = "pizzapocalypse">PIZZAPOCALYPSE</h1>
   <h2 class = "menu">menu options</h2>
   <br/>
-  <fieldset class = "toppins">
+  <fieldset class = "toppins1">
     <legend class = "subMenu">size</legend>
-    <form>
+    <form id = "formSize" onsubmit = "event.preventDefault();">
       <select id="size" class = "clear">
         <option value="1">solo 8" -- $10</option>
         <option value="2">duo 12" -- $15</option>
@@ -29,9 +29,9 @@
       </select>
   </form>
   </fieldset>
-  <fieldset class = "toppins">
+  <fieldset class = "toppins2">
     <legend class = "subMenu">toppings<br/>$2 ea.</legend>
-    <form>
+    <form id = "formTops" onsubmit = "event.preventDefault(); getTops(); getSize();">
     <div>
       <input type="checkbox" id="mushrooms" name="mushrooms">
         <label for ="mushrooms">mushrooms</label>
@@ -63,7 +63,7 @@
       <input type="checkbox" id="a piece of brandon" name="a piece of brandon">
         <label for ="a piece of brandon">a piece of brandon</label>
     </div>
-    <button id = "getPie" class = "clear">Order Pie</button>
+    <button onclick = "getTops(); getSize();" id = "order" class = "clear">Order Pie</button>
     <ul id = "pieList" class = "toppins">
       <p class = "hidden">all ordered pizzas:</p>
       <p class = "hidden">The voice of Him that crieth on this website, prepare ye the way of my pizza, make straight in the desert a high-way for our Messenger. Every valley shall be exalted, and every mountain and hill shall be made low, and the crooked shall be made straight, and the rough places plain. And the glory of the pizza shall be revealed, and all flesh shall see it together, for the mouth of this website hath spoken it.</p>

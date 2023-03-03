@@ -1,4 +1,3 @@
-
 let size = "";
 let toppings = [];
 
@@ -7,22 +6,21 @@ window.onload = function() {
   event.preventDefault();
   }
   hideOrder();
-  orderPie();
 }
 
 function hideOrder() {
   document.getElementById("pieList").setAttribute("class", "hidden");
 }
 
-function orderPie() {
-  document.getElementById("getPie").addEventListener("click", getPies());
+function getSize() {
   size = document.getElementById("size").value;
+  console.log(size);
 }
 
-function getPies() {
-  let checkboxes = document.querySelectorAll("input[type='checkbox']:checked");
-  console.log(checkboxes);
+function getTops() {
   toppings = [];
+  let checkboxes = document.querySelectorAll("input[type='checkbox']:checked");
+  console.log(checkboxes.length);
   for (let i = 0; i < checkboxes.length; i++) {
     toppings.push(checkboxes[i].value)
   }
