@@ -1,5 +1,8 @@
 let size = [];
 let toppings = [];
+let pieCost;
+let topsCost;
+let sizeCost;
 
 window.onload = function() {
   document.querySelector("form").onsubmit = function(event) {
@@ -21,6 +24,14 @@ function getPie() {
 function getSize() {
   size = document.getElementById("size").value;
   newPie.pieSize.push(size);
+  if (size === "solo") {
+    sizeCost = 10;
+  } else if (size === "duo") {
+    sizeCost = 15;
+  } else if (size === "raiding party") {
+    sizeCost = 30;
+  }
+  console.log(sizeCost);
 }
 
 function getTops() {
@@ -31,6 +42,13 @@ function getTops() {
     toppings.push(checkboxes[i].name)
   }
   newPie.pieToppings.push(toppings);
+  topsCost = (checkboxes.length * 2);
+  getCost();
+}
+
+function getCost() {
+  pieCost = parseInt(sizeCost) + parseInt(topsCost);
+  console.log(pieCost);
 }
 
 var newPie = {

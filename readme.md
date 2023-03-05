@@ -42,3 +42,8 @@ Expected Output: newPizza
 Test: "it should assign values to the parameters"
 Code: size = "small", toppings = [mushrooms]
 Expected Output: newPizza {size: 'small', toppings: Array(1)}
+
+Test: "it should calculate the price"
+Code: let pieCost = siceCost + topsCost
+Expected Output: pieCost = $16
+
