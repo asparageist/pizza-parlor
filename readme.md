@@ -47,3 +47,6 @@ Test: "it should calculate the price"
 Code: let pieCost = siceCost + topsCost
 Expected Output: pieCost = $16
 
+Test: "it should push results to display"
+Code: document.queryselector(output).innertext=output
+Expected Output: "*pie description* costs *pie cost*"

@@ -8,17 +8,16 @@ window.onload = function() {
   document.querySelector("form").onsubmit = function(event) {
   event.preventDefault();
   }
-  hideOrder();
 }
 
-function hideOrder() {
-  document.getElementById("pieList").setAttribute("class", "hidden");
+function displayOrder() {
+  document.getElementById("orderInfo").removeAttribute("class");
+  document.querySelector("span#output").innerText = size + " with " + toppings + " costs $" + pieCost;
 }
 
 function getPie() {
   getSize();
   getTops();
-  console.log(newPie);
 }
 
 function getSize() {
@@ -31,7 +30,6 @@ function getSize() {
   } else if (size === "raiding party") {
     sizeCost = 30;
   }
-  console.log(sizeCost);
 }
 
 function getTops() {
@@ -44,11 +42,11 @@ function getTops() {
   newPie.pieToppings.push(toppings);
   topsCost = (checkboxes.length * 2);
   getCost();
+  displayOrder();
 }
 
 function getCost() {
   pieCost = parseInt(sizeCost) + parseInt(topsCost);
-  console.log(pieCost);
 }
 
 var newPie = {
