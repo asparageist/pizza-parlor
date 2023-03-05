@@ -3,6 +3,7 @@ let toppings = [];
 let pieCost;
 let topsCost;
 let sizeCost;
+let costString = "";
 
 window.onload = function() {
   document.querySelector("form").onsubmit = function(event) {
@@ -12,7 +13,7 @@ window.onload = function() {
 
 function displayOrder() {
   document.getElementById("orderInfo").removeAttribute("class");
-  document.querySelector("span#output").innerText = size + " with " + toppings + " costs $" + pieCost;
+  document.querySelector("span#output").innerText = costString;
 }
 
 function getPie() {
@@ -35,7 +36,6 @@ function getSize() {
 function getTops() {
   toppings = [];
   let checkboxes = document.querySelectorAll("input[type='checkbox']:checked");
-  let topsPrice = 2 * (checkboxes.length);
   for (let i = 0; i < checkboxes.length; i++) {
     toppings.push(checkboxes[i].name)
   }
@@ -47,6 +47,7 @@ function getTops() {
 
 function getCost() {
   pieCost = parseInt(sizeCost) + parseInt(topsCost);
+  costString = newPie.pieSize + " with " + newPie.pieToppings + " costs $" + pieCost;
 }
 
 var newPie = {
