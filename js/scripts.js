@@ -3,7 +3,7 @@ let toppings = [];
 let pieCost;
 let topsCost;
 let sizeCost;
-let costString = "";
+let orderedPie;
 
 window.onload = function() {
   document.querySelector("form").onsubmit = function(event) {
@@ -12,8 +12,9 @@ window.onload = function() {
 }
 
 function displayOrder() {
+  orderedPie = new NewPie(size, toppings);
   document.getElementById("orderInfo").removeAttribute("class");
-  document.querySelector("span#output").innerText = costString;
+  document.querySelector("span#output").innerText = orderedPie.costString();
 }
 
 function getPie() {
@@ -23,7 +24,6 @@ function getPie() {
 
 function getSize() {
   size = document.getElementById("size").value;
-  newPie.pieSize.push(size);
   if (size === "solo") {
     sizeCost = 10;
   } else if (size === "duo") {
@@ -39,7 +39,6 @@ function getTops() {
   for (let i = 0; i < checkboxes.length; i++) {
     toppings.push(checkboxes[i].name)
   }
-  newPie.pieToppings.push(toppings);
   topsCost = (checkboxes.length * 2);
   getCost();
   displayOrder();
@@ -47,10 +46,13 @@ function getTops() {
 
 function getCost() {
   pieCost = parseInt(sizeCost) + parseInt(topsCost);
-  costString = newPie.pieSize + " with " + newPie.pieToppings + " costs $" + pieCost;
 }
 
-var newPie = {
-  pieToppings: [],
-  pieSize: []
+function NewPie(pieSize, pieToppings) {
+  this.pieToppings = pieToppings;
+  this.pieSize = pieSize;
 };
+
+NewPie.prototype.costString = function() {
+  return this.pieSize + " with " + this.pieToppings + " costs $" + pieCost;
+}
